@@ -12,10 +12,9 @@ PROJECT_TITLEID := VHB000001
 PROJECT := gwen_sample
 CXXFLAGS += -std=c++11 -g
 
-LIBS := -lz -lfreetype -lpng -ljpeg -lm -lc \
-		-lSceAppMgr_stub -lSceAppUtil_stub -lSceCommonDialog_stub \
-		-lSceCtrl_stub -lSceDisplay_stub -lSceGxm_stub \
-		-lSceKernel_stub -lSceSysmodule_stub -lSceTouch_stub -lvita2d -lGWEN
+LIBS := -lGWEN -lvita2d -lSceKernel_stub -lSceTouch_stub -lSceDisplay_stub -lSceGxm_stub \
+	-lSceSysmodule_stub -lSceAppUtil_stub -lSceCtrl_stub -lScePgf_stub \
+	-lSceCommonDialog_stub -lfreetype -lpng -ljpeg -lz -lm -lc
 
 
 SRC_C :=$(call rwildcard, src/, *.c)
