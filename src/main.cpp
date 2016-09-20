@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
 
 	Gwen::Controls::Label *pLabel = new Gwen::Controls::Label(pWindow);
 	pLabel->SetText("I like cookies.\n - Banandana\nOriginal library by Garry Newman.");
-	pLabel->SizeToContents();
+	pLabel->SetSize(320, 120);
 	pLabel->SetPos(10, 10);
 
 	// Create UI input handler
