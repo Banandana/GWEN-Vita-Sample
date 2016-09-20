@@ -54,11 +54,21 @@ int main(int argc, char *argv[]) {
 	pCanvas->SetBackgroundColor(Gwen::Color(150, 170, 170, 255));
 
 	Gwen::Controls::Button *pButton = new Gwen::Controls::Button(pCanvas);
-	pButton->GetFont()->size = 22;
+	pButton->GetFont()->size = 18;
 	pButton->SetText("Exit Application");
 	pButton->SetPos(10, 10);
 	pButton->SetSize(256, 48);
 	Gwen::EventHandler exitPress(pButton->onPress, &quit);
+
+	Gwen::Controls::WindowControl *pWindow = new Gwen::Controls::WindowControl(pCanvas);
+	pWindow->SetTitle("Homebrew Window");
+	pWindow->SetPos(400, 10);
+	pWindow->SetSize(350, 150);
+
+	Gwen::Controls::Label *pLabel = new Gwen::Controls::Label(pWindow);
+	pLabel->SetText("I like cookies.\n - Banandana\nOriginal library by Garry Newman.");
+	pLabel->SizeToContents();
+	pLabel->SetPos(10, 10);
 
 	// Create UI input handler
 	Gwen::Input::Vita vitaInput;
