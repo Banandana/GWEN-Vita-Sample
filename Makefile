@@ -10,7 +10,7 @@ PROJECT_TITLE := Gwen Sample
 PROJECT_TITLEID := VHB000001
 
 PROJECT := gwen_sample
-CXXFLAGS += -std=c++11 -g
+CXXFLAGS += -std=c++11 -g -Og
 
 LIBS := -lGWEN -lvita2d -lSceKernel_stub -lSceTouch_stub -lSceDisplay_stub -lSceGxm_stub \
 	-lSceSysmodule_stub -lSceAppUtil_stub -lSceCtrl_stub -lScePgf_stub \
@@ -55,10 +55,10 @@ $(OBJ_DIRS):
 	mkdir -p $@
 
 out/%.o : src/%.cpp | $(OBJ_DIRS)
-	arm-vita-eabi-g++ -Og -g -c $(CXXFLAGS) -o $@ $<
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
 
 out/%.o : src/%.c | $(OBJ_DIRS)
-	arm-vita-eabi-g++ -g -Og -c -o $@ $<
+	$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
 	rm -f $(PROJECT).velf $(PROJECT).elf $(PROJECT).vpk param.sfo eboot.bin $(OBJS)
